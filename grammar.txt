@@ -5,8 +5,8 @@
 <multiple> := <expr> '*'
 <group>    := '(' <expr> ')'
 <any>      := '.'
-<count>    := <expr> '{' <number> '}'
+<count>    := <expr> '{' <digit> '}'
 <ignore>   := <expr> '\I'
 <word>     := [char] [<word>]
-<number>   := [0-9]+
+<digit>   := [0-9]+
 <char>     := [a-zA-Z]
