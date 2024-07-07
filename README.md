@@ -2,19 +2,6 @@
 
 ## Grammar
 ```
-<!-- <match>    := <expr>
-<expr>     := <subexpr>
-<subexpr>  := <or> | <multiple> | <group> | <any> | <count> | <ignore> | <word>
-<or>       := <expr> '+' <expr>
-<multiple> := <expr> '*'
-<group>    := '(' <expr> ')'
-<any>      := '.'
-<count>    := <expr> '{' <digit> '}'
-<ignore>   := <expr> '\I'
-<word>     := [char] [<word>]
-<digit>    := [0-9]+
-<char>     := [a-zA-Z]
--->
 <match>    := <expr>
 <expr>     := <subexpr> [<subexpr>]
 <subexpr>  := <or> | <group> | <count> | <word>
