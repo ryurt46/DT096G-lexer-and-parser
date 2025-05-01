@@ -126,7 +126,7 @@ struct Match : ASTNode {
                 while (first != last) {
                         it temp = first;
                         if (children[0]->evaluate(temp, last)) {
-                                first = temp; // flytta fram på match
+                                first = temp;
                                 return true;
                         }
                         ++first;
