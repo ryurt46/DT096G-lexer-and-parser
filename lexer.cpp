@@ -45,25 +45,7 @@ Token Lexer::lexer(it &first, it last) {
                 return Token::RBRACE;
         case '\\':
                 ++first;
-                if (first != last) {
-                        if (*first == 'I') {
-                                ++first;
-                                return Token::IGNORE;
-                        } else if (*first == 'O') {
-                                ++first;
-                                if (first != last && *first == '{') {
-                                        ++first;
-                                        while (first != last &&
-                                               std::isdigit(*first)) {
-                                                ++first;
-                                        }
-                                        if (first != last && *first == '}') {
-                                                ++first;
-                                                return Token::OUTPUT;
-                                        }
-                                }
-                        }
-                }
+                // Här tar vi bort hanteringen av \I och \O
                 return Token::INVALID;
         default:
                 ++first;

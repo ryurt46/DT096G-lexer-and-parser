@@ -10,5 +10,3 @@
 <char>     := [a-zA-Z]
 <digit>    := [0-9]
 <any>      := '.'
-<ignore>   := <expr> '\I'
-<output>   := <expr> '\O{' <digit> '}'
