@@ -45,7 +45,7 @@ Token Lexer::lexer(it &first, it last) {
                 return Token::RBRACE;
         case '\\':
                 ++first;
-                return Token::INVALID;
+               return Token::INVALID;
         default:
                 ++first;
                 return Token::INVALID;
