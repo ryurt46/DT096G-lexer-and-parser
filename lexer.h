@@ -12,8 +12,6 @@ enum Token {
         ANY,
         LBRACE,
         RBRACE,
-        IGNORE,
-        OUTPUT,
         DIGIT,
         CHAR,
         END,
