@@ -1,17 +1,29 @@
 #ifndef LEXER_H
 #define LEXER_H
+#include <cctype>
 #include <string>
-
 using it = std::string::iterator;
 
 enum Token {
-    LPAREN, RPAREN, OR, GREEDY, ANY, LBRACE, RBRACE, IGNORE, OUTPUT, DIGIT, CHAR, END, INVALID
+        LPAREN,
+        RPAREN,
+        OR,
+        GREEDY,
+        ANY,
+        LBRACE,
+        RBRACE,
+        IGNORE,
+        OUTPUT,
+        DIGIT,
+        CHAR,
+        END,
+        INVALID
 };
 
-class Lexer{
-public:
-    Lexer() = default;
-    Token lexer(it& first, it last);
+class Lexer {
+      public:
+        Lexer() = default;
+        Token lexer(it &first, it last);
 };
 
 #endif
