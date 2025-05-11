@@ -2,19 +2,6 @@
 #include <iostream>
 #include <string>
 
-// └──
-void printTree(const std::string &prefix, ASTNode *node, bool isLeft) {
-        if (!node)
-                return;
-
-        std::cout << prefix << (isLeft ? "|--" : "└─") << node->id() << '\n';
-
-        for (size_t i = 0; i < node->children.size(); ++i)
-                printTree(prefix + (isLeft ? "|   " : "    "),
-                          node->children[i], i < node->children.size() - 1);
-}
-void printTree(ASTNode *node) { printTree("", node, false); }
-
 int main(int argc, char *argv[]) {
         if (argc < 2) {
                 std::cerr << "Usage: match <pattern> < input.txt>\n";
@@ -57,8 +44,6 @@ int main(int argc, char *argv[]) {
         if (found) {
                 std::string matched(matchBeg, matchEnd);
                 std::cout << "Match found: " << matched << '\n';
-                std::cout << "|__\n";
-                printTree(root);
                 return EXIT_SUCCESS;
         } else {
                 std::cout << "No match.\n";
