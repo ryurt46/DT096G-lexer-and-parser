@@ -13,13 +13,6 @@ struct ASTNode {
                         children.push_back(child);
                 }
         }
-        virtual std::string id() const {
-                std::string raw = typeid(*this).name();
-                size_t i = 0;
-                while (i < raw.size() && std::isdigit(raw[i]))
-                        ++i;          
-                return raw.substr(i);
-        }
 };
 
 struct Any : ASTNode {
