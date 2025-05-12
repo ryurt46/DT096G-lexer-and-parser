@@ -1,6 +1,4 @@
 #include "parser.h"
-#include <iostream>
-#include <string>
 
 int main(int argc, char *argv[]) {
         if (argc < 2) {
@@ -29,8 +27,7 @@ int main(int argc, char *argv[]) {
         bool found = false;
 
         if (patternNode) {
-                for (it start = input.begin(); start != input.end() && !found;
-                     ++start) {
+                for (it start = input.begin(); start != input.end() && !found; ++start) {
                         it tmpStart = start;
                         it tmpEnd = input.end();
                         if (patternNode->evaluate(tmpStart, tmpEnd)) {
@@ -46,7 +43,7 @@ int main(int argc, char *argv[]) {
                 std::cout << "Match found: " << matched << '\n';
                 return EXIT_SUCCESS;
         } else {
-                std::cout << "No match.\n";
+                //std::cout << "No match.\n";
                 return EXIT_FAILURE;
         }
 }

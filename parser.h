@@ -3,11 +3,11 @@
 #include "node.h"
 
 class Parser {
-      public:
+public:
         Parser(it &first, it &last);
         Match *getMatch() const { return match; }
 
-      private:
+private:
         Match *parseMatch();
         Expr *parseExpr();
         SubExpr *parseSubExpr();
