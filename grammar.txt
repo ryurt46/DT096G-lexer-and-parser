@@ -1,6 +1,6 @@
 <match>    := <expr>
 <expr>     := <subexpr> [<expr>]
-<subexpr>  := <or> | <group> | <word> | <any> | <ignore>
+<subexpr>  := <or> | <group> | <word> | <any>
 <or>       := <word> '+' <word>
 <group>    := '(' <expr> ')'
 <word>     := <term> [<word>]
