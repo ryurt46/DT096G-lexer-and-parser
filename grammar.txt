@@ -1,8 +1,8 @@
 <match>    := <expr>
 <expr>     := <subexpr> [<expr>]
-<subexpr>  := <or> | <group> | <word> | <any>
-<or>       := <word> '+' <word>
+<subexpr>  := <group> | <or> | <word> | <any>
 <group>    := '(' <expr> ')'
+<or>       := <word> '+' <word>
 <word>     := <term> [<word>]
 <term>     := <count> | <greedy> | <char>
 <count>    := <char> '{' <digit> '}' | <any> '{' <digit> '}'

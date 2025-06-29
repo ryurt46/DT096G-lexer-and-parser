@@ -24,7 +24,6 @@ struct Any : ASTNode {
     }
 };
 
-// "a{3}" → CHAR, LBRACE, DIGIT, RBRACE
 struct Char : ASTNode {
     char c;
     bool evaluate(it &first, it &last) override {
@@ -52,18 +51,17 @@ struct Count : ASTNode {
     }
 };
 
-// (lo)*
-// group
-// char1 char2
-// greedy -> c[0] -> group ch[0] -> char1 ch[1] -> char2
 struct Greedy : ASTNode {
     bool evaluate(it &first, it &last) override {
         it latestMatch = first;
-
+        int count = 0;
         while (children[0]->evaluate(first, last)) {
             latestMatch = first;
+            count++;
         }
-
+        if (count == 0) {
+            return false;
+        }
         first = latestMatch;
         return true;
     }

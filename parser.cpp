@@ -29,17 +29,17 @@ Expr *Parser::parseExpr() {
 SubExpr *Parser::parseSubExpr() {
     auto backup = first;
 
-    Or *orNode = parseOr();
-    if (orNode) {
-        SubExpr *s = new SubExpr();
-        s->addChild(orNode);
-        return s;
-    }
-
     Group *group = parseGroup();
     if (group) {
         SubExpr *s = new SubExpr();
         s->addChild(group);
+        return s;
+    }
+
+    Or *orNode = parseOr();
+    if (orNode) {
+        SubExpr *s = new SubExpr();
+        s->addChild(orNode);
         return s;
     }
 
