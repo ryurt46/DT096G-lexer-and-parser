@@ -1,12 +1,14 @@
-# lexer-and-parser (regex-exp)
+# lexer-and-parser (Regex-like Pattern Matcher)
+
+A simple C++ project implementing a recursive-descent parser for a custom regular-expression grammar.
 
 ## Grammar
 ```
 <match>    := <expr>
 <expr>     := <subexpr> [<expr>]
-<subexpr>  := <or> | <group> | <word> | <any> | <ignore>
-<or>       := <word> '+' <word>
+<subexpr>  := <group> | <or> | <word> | <any>
 <group>    := '(' <expr> ')'
+<or>       := <word> '+' <word>
 <word>     := <term> [<word>]
 <term>     := <count> | <greedy> | <char>
 <count>    := <char> '{' <digit> '}' | <any> '{' <digit> '}'
@@ -14,6 +16,7 @@
 <char>     := [a-zA-Z]
 <digit>    := [0-9]
 <any>      := '.'
-<ignore>   := <expr> '\I'
-<output>   := <expr> '\O{' <digit> '}'
 ```
+
+## Usage
+To run the program use: `./match "(love+hate)" < input.txt`
